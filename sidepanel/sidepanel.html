@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header id="header">
+      <div id="header-left">
+        <img src="../icons/icon32.png" alt="OpenClaw" id="logo">
+        <span id="title">OpenClaw</span>
+      </div>
+      <div id="header-right">
+        <button id="btn-reload" title="Reload" class="icon-btn">↺</button>
+        <button id="btn-popout" title="Open in tab" class="icon-btn">⤢</button>
+        <div id="status-dot" class="dot offline" title="Checking connection..."></div>
+      </div>
+    </header>
+
+    <!-- Connection error state -->
+    <div id="error-state" class="hidden">
+      <div class="error-icon">🐾</div>
+      <h2>OpenClaw is offline</h2>
+      <p>Make sure OpenClaw is running on <strong>localhost:3457</strong></p>
+      <button id="btn-retry" class="btn-primary">Retry Connection</button>
+      <div class="hint">
+        Start OpenClaw with:<br>
+        <code>openclaw gateway start</code>
+      </div>
+    </div>
+
+    <!-- Main iframe -->
+    <div id="iframe-container">
+      <iframe
+        id="openclaw-frame"
+        src="http://localhost:3457"
+        allow="microphone; clipboard-read; clipboard-write"
+        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation-by-user-activation"
+      ></iframe>
+    </div>
+  </div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>

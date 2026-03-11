@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "OpenClaw",
+  "version": "1.0.0",
+  "description": "OpenClaw AI assistant — quick access from any tab",
+
+  "permissions": [
+    "contextMenus",
+    "sidePanel",
+    "storage",
+    "activeTab"
+  ],
+
+  "host_permissions": [
+    "http://localhost:3457/*",
+    "http://127.0.0.1:3457/*"
+  ],
+
+  "action": {
+    "default_icon": {
+      "16":  "icons/icon16.png",
+      "32":  "icons/icon32.png",
+      "48":  "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "OpenClaw"
+  },
+
+  "side_panel": {
+    "default_path": "sidepanel/sidepanel.html"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "commands": {
+    "toggle-panel": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+O",
+        "mac": "Command+Shift+O"
+      },
+      "description": "Toggle OpenClaw side panel"
+    }
+  },
+
+  "icons": {
+    "16":  "icons/icon16.png",
+    "32":  "icons/icon32.png",
+    "48":  "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
